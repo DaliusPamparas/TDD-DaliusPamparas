@@ -16,34 +16,34 @@ namespace ValidationEngineTests
         {
             var sut = new ValidationEngine.ValidationEngine();
 
-            sut.isValid= sut.Validate("dalius.pamparas@test.se");
+            var result = sut.Validate("dalius.pamparas@test.se");
 
-            Assert.IsTrue(sut.isValid, "Email is no valid !");
+            Assert.IsTrue(result, "Email is no valid !");
         }
         [Test]
         public void NoAtSingnInEmail()
         {
             var sut = new ValidationEngine.ValidationEngine();
 
-            sut.isValid = sut.Validate("daliustestgddf.se");
+            var result = sut.Validate("daliustestgddf.se");
 
-            Assert.IsFalse(sut.isValid, "Email validation without @ no working!");
+            Assert.IsFalse(result, "Email validation without @ no working!");
         }
         [Test]
         public void NoPointInEmail()
         {
             var sut = new ValidationEngine.ValidationEngine();
 
-            sut.isValid = sut.Validate("daliust@estgddfse");
+            var result = sut.Validate("daliust@estgddfse");
 
-            Assert.IsFalse(sut.isValid, "Email validation without . id no working!");
+            Assert.IsFalse(result, "Email validation without . id no working!");
         }
         [Test]
         public void NoEmptyEmailValue()
         {
             var sut = new ValidationEngine.ValidationEngine();
 
-            //sut.isValid = sut.Validate("");
+            
             var result = sut.Validate("");
             Assert.IsFalse(result, "Email validation with empty value no working!");
         }
