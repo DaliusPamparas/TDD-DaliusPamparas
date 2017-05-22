@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+namespace ValidationEngine
+{
+    public class ValidationEngine
+    {
+        public bool isValid { get; set; }
+        public bool Validate(string email)
+        {
+            if(email == null)
+                {
+                return false;
+            }
+            else
+            {
+                var  regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                var match = regex.Match(email);
+                return match.Success;
+            }
+            
+        }
+    }
+}
