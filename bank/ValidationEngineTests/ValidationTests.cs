@@ -29,5 +29,14 @@ namespace ValidationEngineTests
 
             Assert.IsFalse(sut.isValid, "Email validation without @ no working!");
         }
+        [Test]
+        public void NoPointInEmail()
+        {
+            var sut = new ValidationEngine.ValidationEngine();
+
+            sut.isValid = sut.Validate("daliust@estgddfse");
+
+            Assert.IsFalse(sut.isValid, "Email validation without . id no working!");
+        }
     }
 }
