@@ -43,9 +43,9 @@ namespace ValidationEngineTests
         {
             var sut = new ValidationEngine.ValidationEngine();
 
-            sut.isValid = sut.Validate("");
-
-            Assert.IsFalse(sut.isValid, "Email validation with empty value no working!");
+            //sut.isValid = sut.Validate("");
+            var result = sut.Validate("");
+            Assert.IsFalse(result, "Email validation with empty value no working!");
         }
     }
 }
