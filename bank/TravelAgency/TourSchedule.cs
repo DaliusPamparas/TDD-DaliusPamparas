@@ -24,7 +24,7 @@ namespace TravelAgency
             var result = _tours.Count(x => x.When.Date == tourDate.Date);
             if (result >= 3)
             {
-                //throw new TourAllocationException(dateTime.AddDays(1).Date);
+              
                 throw new TourAllocationException();
             }
         }
